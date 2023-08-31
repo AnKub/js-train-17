@@ -10,7 +10,8 @@ function replaceText(word, replacement, text) {
   // Створення регулярного виразу для пошуку слова з флагом 'g' (глобальний пошук).
   // Використання методу `replace` регулярного виразу для заміни слова на фразу у тексті.
   // Повернення заміненого тексту.
-  .......git 
+  const regexp = new RegExp(/word/g);  
+  console.log(text.replace(regexp,replacement));
 }
 
 // Перевірка
@@ -36,6 +37,8 @@ function checkWord(word, text) {
   // Створення регулярного виразу для пошуку слова з флагом 'i' (регістронезалежний пошук).
   // Використання методу `test` регулярного виразу для перевірки наявності слова у тексті.
   // Повернення результату перевірки.
+    const regexp = new RegExp(/word/i);
+  console.log(text = regexp.test(regexp));
 }
 
 // Перевірка
@@ -55,7 +58,12 @@ function extractTextInParentheses(str) {
   // Використання методу `matchAll` для отримання всіх збігів регулярного виразу.
   // Створення масиву зі знайденими текстами.
   // Повернення масиву вилучених текстів.
+  let matches = str.matchAll(/\((.*?)\)/g);
+  for (let match of matches) {
+	console.log(match);
 }
+}
+
 
 // Перевірка
 console.log("Завдання 3 ==============================");
@@ -75,6 +83,9 @@ function countEmails(str) {
   // Використання методу `match` для отримання всіх збігів регулярного виразу.
   // Підрахунок кількості email-адрес.
   // Повернення кількості email-адрес.
+  let matches = str.match(/\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/g);
+  for (let match of matches)
+    console.log(`Email:${match}`);
 }
 
 // Перевірка
